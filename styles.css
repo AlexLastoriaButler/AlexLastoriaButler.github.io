@@ -5,6 +5,7 @@ body {
     font-family: Arial, sans-serif; /* Font family */
     margin: 0;
     padding: 0;
+    color: #333; /* Change the text color */
 }
 
 .container {
@@ -22,12 +23,6 @@ h1 {
 
 canvas {
     max-width: 100%;
-}
-
-/* Set the font family and color */
-body {
-  font-family: Arial, sans-serif; /* Change the font family to your preferred font */
-  color: #333; /* Change the text color */
 }
 
 /* Create a gradient background */
