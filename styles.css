@@ -17,8 +17,24 @@ body {
 
 h1 {
     text-align: center;
+    font-size: 36px; /* Change the header font size */
 }
 
 canvas {
     max-width: 100%;
+}
+
+/* Set the font family and color */
+body {
+  font-family: Arial, sans-serif; /* Change the font family to your preferred font */
+  color: #333; /* Change the text color */
+}
+
+/* Create a gradient background */
+body {
+  background: linear-gradient(to bottom, #ff9900, #ff5500); /* Adjust the gradient colors */
+}
+
+p {
+  font-size: 18px; /* Change the paragraph font size */
 }
