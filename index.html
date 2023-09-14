@@ -1,50 +1,46 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>GitHub Repo Page</title>
-    <!-- Include Dash CSS and JavaScript -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dash/2.1.0/dash.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Page with Python Chart</title>
+
+    <!-- Include Chart.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- External CSS file for styling -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Welcome to My GitHub Repo Page</h1>
-    
-    <!-- Container for the Python chart -->
-    <div id="chart-container">
-        <h2>Python Chart</h2>
-        <!-- Include Plotly chart here using Python (e.g., generated using Plotly Python library) -->
-        <div id="plotly-chart"></div>
+    <div class="container">
+        <h1>Python Chart Example</h1>
+        <canvas id="myChart"></canvas>
     </div>
 
-    <!-- Container for the Python interactive table -->
-    <div id="table-container">
-        <h2>Python Interactive Table</h2>
-        <!-- Include Dash interactive table here (created using Dash Python library) -->
-        <div id="dash-table"></div>
-    </div>
-
-    <!-- Include Dash JavaScript for interactivity -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dash/2.1.0/dash.min.js"></script>
-    <!-- Include your Python chart and table scripts here -->
+    <!-- JavaScript code to create the chart -->
     <script>
-        // Example chart using Plotly
-        var data = [{
-            x: [1, 2, 3, 4, 5],
-            y: [10, 11, 12, 13, 14],
-            type: 'scatter'
-        }];
-
-        var layout = {
-            title: 'Sample Chart',
-            xaxis: {
-                title: 'X-axis'
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'bar', // Change the chart type as needed
+            data: {
+                labels: ['Label 1', 'Label 2', 'Label 3', 'Label 4', 'Label 5'],
+                datasets: [{
+                    label: 'Data',
+                    data: [12, 19, 3, 5, 2], // Replace with your data
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)', // Chart color
+                    borderColor: 'rgba(75, 192, 192, 1)', // Border color
+                    borderWidth: 1
+                }]
             },
-            yaxis: {
-                title: 'Y-axis'
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
             }
-        };
-
-        Plotly.newPlot('chart-container', data, layout);
+        });
     </script>
 </body>
 </html>
