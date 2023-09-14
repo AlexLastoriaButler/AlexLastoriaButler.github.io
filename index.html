@@ -2,44 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GitHub Page with Python Chart</title>
-
-    <!-- Include Chart.js library -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-    <!-- External CSS file for styling -->
-    <link rel="stylesheet" href="styles.css">
+    <title>Interactive Chart</title>
+    <!-- Include Plotly.js from a CDN -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
 <body>
-    <div class="container">
-        <h1>Python Chart Example</h1>
-        <canvas id="myChart"></canvas>
-    </div>
+    <h1>Interactive Chart</h1>
+    
+    <!-- Embed the Plotly chart here -->
+    <div id="chart"></div>
 
-    <!-- JavaScript code to create the chart -->
     <script>
-        var ctx = document.getElementById('myChart').getContext('2d');
-        var myChart = new Chart(ctx, {
-            type: 'bar', // Change the chart type as needed
-            data: {
-                labels: ['Label 1', 'Label 2', 'Label 3', 'Label 4', 'Label 5'],
-                datasets: [{
-                    label: 'Data',
-                    data: [12, 19, 3, 5, 2], // Replace with your data
-                    backgroundColor: 'rgba(75, 192, 192, 0.2)', // Chart color
-                    borderColor: 'rgba(75, 192, 192, 1)', // Border color
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                responsive: true,
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
-                }
+        // Load the Plotly chart
+        Plotly.d3.text("interactive_chart.html", function(error, text) {
+            if (error) {
+                console.error(error);
+                return;
             }
+            
+            var chartDiv = document.getElementById('chart');
+            chartDiv.innerHTML = text;
         });
     </script>
 </body>
