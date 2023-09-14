@@ -1,15 +1,50 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <meta charset="utf-8">
+    <title>GitHub Repo Page</title>
+    <!-- Include Dash CSS and JavaScript -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dash/2.1.0/dash.min.css">
+</head>
 <body>
-<style>
-  body {
-    background-color: rgba(89, 0, 179, 1);
-    font-family: 'Courier New', monospace;
-  }
-</style>
-<h1 style="color: rgb(135,206,235)">It's a hosted GitHub Page</h1>
-<p style="color: rgb(135,206,235)">Not much going on here yet, sorry. PySpark, R Shiny (if I can get Markdown to install...) to come.</p>
-<p style="color: rgb(135,206,235)">They'll probably look like this.</p>
-<img src="https://cdn-wordpress-info.futurelearn.com/wp-content/uploads/37e0c522-1345-47e6-9a29-0030ff18fd6a-754x451.jpg.webp" alt="Amazing chart">
+    <h1>Welcome to My GitHub Repo Page</h1>
+    
+    <!-- Container for the Python chart -->
+    <div id="chart-container">
+        <h2>Python Chart</h2>
+        <!-- Include Plotly chart here using Python (e.g., generated using Plotly Python library) -->
+        <div id="plotly-chart"></div>
+    </div>
+
+    <!-- Container for the Python interactive table -->
+    <div id="table-container">
+        <h2>Python Interactive Table</h2>
+        <!-- Include Dash interactive table here (created using Dash Python library) -->
+        <div id="dash-table"></div>
+    </div>
+
+    <!-- Include Dash JavaScript for interactivity -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dash/2.1.0/dash.min.js"></script>
+    <!-- Include your Python chart and table scripts here -->
+    <script>
+        // Example chart using Plotly
+        var data = [{
+            x: [1, 2, 3, 4, 5],
+            y: [10, 11, 12, 13, 14],
+            type: 'scatter'
+        }];
+
+        var layout = {
+            title: 'Sample Chart',
+            xaxis: {
+                title: 'X-axis'
+            },
+            yaxis: {
+                title: 'Y-axis'
+            }
+        };
+
+        Plotly.newPlot('chart-container', data, layout);
+    </script>
 </body>
 </html>
